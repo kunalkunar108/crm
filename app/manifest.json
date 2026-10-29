@@ -1,0 +1,9 @@
+{
+  "name": "FieldSales CRM",
+  "short_name": "FieldSales",
+  "description": "Personal CRM for leads and follow-ups",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#10131a",
+  "theme_color": "#10131a"
+}
