@@ -10,11 +10,12 @@ Web-first, mobile-responsive personal CRM for leads and follow-ups.
 - Follow-up task list with completion toggles
 - Starter demo records
 - Responsive navigation and layout for desktop and mobile
-- Browser localStorage persistence and basic offline-friendly access after the app has loaded
+- Supabase email/password authentication and owner-scoped cloud storage for leads, follow-ups, activities, projects and milestones
+- Row Level Security on all CRM tables
 
 ## AI calling workspace\n\nAn initial AI calling workspace is available at `/ai-calling`. It includes per-user calling policy settings, human-assisted and AI voice-agent modes, call-script preparation, consent confirmation, and a Supabase-backed call preparation queue. The current release does not place calls, connect a telephony provider, generate scripts with an LLM, or enforce daily limits/cooldowns at a server execution boundary. Outbound execution is off by default. Apply `supabase/migrations/0003_ai_sales_calling.sql` before using this page.\n\n## Important limitations
 
-This is an initial UI MVP, not a production-ready CRM. Data is stored only in the current browser on the current device. It will **not** sync between your PC and phone. Authentication, Supabase cloud storage, durable offline sync/conflict resolution, notifications, detailed project milestones and actual payment records have not been implemented yet. The Projects page is intentionally a placeholder. Demo records are sample data.
+This is an early CRM release, not production-ready. Cloud authentication and owner-scoped storage are implemented, but durable offline sync/conflict resolution, notifications, actual payment records and live telephony are not implemented. Demo records, if shown, are sample data.
 
 ## Run locally
 
@@ -28,12 +29,12 @@ Run npm run build to validate a production build.
 
 ## Vercel
 
-Import kunalkunar108/crm into Vercel as a Next.js project. No environment variables are needed for this local-storage preview.
+Set `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` (or `NEXT_PUBLIC_SUPABASE_ANON_KEY`) in Vercel. Use the CRM project's URL and publishable/anon key only; never expose a service-role key in browser environment variables.
 
 ## Next steps
 
 1. Install dependencies and run a production build; fix any errors.
-2. Add Supabase authentication, database tables and row-level security.
+2. Add durable offline sync/conflict resolution and notification delivery.
 3. Implement a persistent offline queue and tested sync/conflict behavior.
 4. Add project milestones, payment tracking and reminders.
 5. Add a complete installable PWA and test on a real Android device.
