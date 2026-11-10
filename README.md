@@ -12,7 +12,7 @@ Web-first, mobile-responsive personal CRM for leads and follow-ups.
 - Responsive navigation and layout for desktop and mobile
 - Browser localStorage persistence and basic offline-friendly access after the app has loaded
 
-## Important limitations
+## AI calling workspace\n\nAn initial AI calling workspace is available at `/ai-calling`. It includes per-user calling policy settings, human-assisted and AI voice-agent modes, call-script preparation, consent confirmation, and a Supabase-backed call preparation queue. The current release does not place calls, connect a telephony provider, generate scripts with an LLM, or enforce daily limits/cooldowns at a server execution boundary. Outbound execution is off by default. Apply `supabase/migrations/0003_ai_sales_calling.sql` before using this page.\n\n## Important limitations
 
 This is an initial UI MVP, not a production-ready CRM. Data is stored only in the current browser on the current device. It will **not** sync between your PC and phone. Authentication, Supabase cloud storage, durable offline sync/conflict resolution, notifications, detailed project milestones and actual payment records have not been implemented yet. The Projects page is intentionally a placeholder. Demo records are sample data.
 
